@@ -69,13 +69,27 @@ async function displayBooks() {
     try {
         let data = await getData()
         data.forEach((ele,i) => {
-            cont.innerHTML += ` <div class="book" id="${ele.id}">
-            <img src="${ele.imageUrl}" alt="book cover">
-            <h4>${ele.title}</h4>
-            <p>${ele.author}</p>
-            <button type="button" onclick="verifyBook(this)">Verify Book</button>
-            <button type="button" onclick="deleteBook(this)">Delete Book</button>
-        </div>`
+            if(ele.isAvailable == false){
+                cont.innerHTML += ` <div class="book" id="${ele.id}">
+                <img src="${ele.imageUrl}" alt="book cover">
+                <h4>${ele.title}</h4>
+                <p>${ele.author}</p>
+                <p>Avaialbility Status: Is Not Available</p>
+                <p>Days borrowed for: ${ele.borrowedDays}</p>
+                <button type="button" onclick="verifyBook(this)">Verify Book</button>
+                <button type="button" onclick="deleteBook(this)">Delete Book</button>
+                </div>`
+            } else {
+                cont.innerHTML += ` <div class="book available" id="${ele.id}">
+                <img src="${ele.imageUrl}" alt="book cover">
+                <h4>${ele.title}</h4>
+                <p>${ele.author}</p>
+                <p>Avaialbility Status: Is Available</p>
+                <button type="button" onclick="verifyBook(this)">Verify Book</button>
+                <button type="button" onclick="deleteBook(this)">Delete Book</button>
+                </div>`
+            }
+            
         })
 
         // functionality to verify the book
