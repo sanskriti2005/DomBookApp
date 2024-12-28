@@ -10,6 +10,24 @@
     <div id="nav">
         
     </div>
+    <!-- form to add new books -->
+    <form id="book-form">
+        <p>New Book</p>
+        <label for="title">Enter the title of the book:</label><input type="text" id="title">
+        <label for="author">Enter the name of the author:</label><input type="text" id="author">
+        <select id="category">
+            <option value="">Select a category</option>
+            <option value="fiction">Fiction</option>
+            <option value="comedy">Comedy</option>
+            <option value="technical">Technical</option>
+        </select>
+        <button>Add New Book</button>
+    </form>
+    <div id="books-cont">
+        
+       
+    </div>
 </body>
 <script src="./backend/navbar.js"></script>
+<script type="module" src="./backend/admin.js"></script>
 </html>

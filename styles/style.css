@@ -40,3 +40,38 @@ body{
     font-weight: 600;
     font-size: larger;
 }
+
+/* admin page: add new book form styling */
+#book-form{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 2rem auto;
+    background-color: rgb(197, 197, 197);
+    padding: 1.8rem;
+    gap: 0.8rem;
+}
+#book-form > p{
+    text-align: center;
+    font-weight: 600;
+    font-size: larger;
+}
+/* books display styling */
+#books-cont{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+}
+.book{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.4rem 0;
+    border: 1px solid black;
+}
+.book > img{
+    width: 200px;
+    height: 300px;
+}
