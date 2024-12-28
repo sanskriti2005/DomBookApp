@@ -95,20 +95,23 @@ async function displayBooks() {
         // functionality to verify the book
         window.verifyBook = async (buttonEl) => {
             let id = buttonEl.parentElement.id
-            try {
-                let req = await fetch(`${endpoint}/${id}`, {
-                    method:"PATCH",
-                    headers:{
-                        "Content-type":"application/json"
-                    },
-                    body: JSON.stringify({isVerified:true})
-                })
-                if(req.ok){
-                    alert("Verification successful!")
-                    buttonEl.disabled = true;
+            let confirmVerfifcation = confirm("Are you sure to verify? ")
+            if(confirmVerfifcation){
+                try {
+                    let req = await fetch(`${endpoint}/${id}`, {
+                        method:"PATCH",
+                        headers:{
+                            "Content-type":"application/json"
+                        },
+                        body: JSON.stringify({isVerified:true})
+                    })
+                    if(req.ok){
+                        alert("Verification successful!")
+                        buttonEl.disabled = true;
+                    }
+                } catch (error) {
+                   alert("Could not verify, please try again later") 
                 }
-            } catch (error) {
-                
             }
         }
 
