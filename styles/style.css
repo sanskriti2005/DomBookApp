@@ -70,6 +70,7 @@ body{
     align-items: center;
     padding: 0.4rem 0;
     border: 1px solid black;
+    border-radius: 5px;
 }
 .book > img{
     width: 200px;

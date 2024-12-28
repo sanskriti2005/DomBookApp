@@ -18,10 +18,14 @@ if(loginData != []){
 const availabeBtn = document.getElementById("available-btn");
 const borrowedBtn = document.getElementById("borrowed-btn");
 
+// functionality to check the available books
 availabeBtn.addEventListener("click", async () => {
+    // catching relevant elements
     const cont = document.getElementById("books-cont")
+    // emptying the displaying container on every click to avoid chaotic displaying
     cont.innerHTML = ""
     try {
+        // getting data from the endpoint and displaying it filtered off of books that aren't available
         let data = await getData()
         data.forEach((ele,i) => {
             if(ele.isAvailable){
@@ -34,6 +38,7 @@ availabeBtn.addEventListener("click", async () => {
             }  
         })
 
+        // functionality to borrow the book
         window.borrowBook = async (buttonEl) => {
             let id = buttonEl.parentElement.id
             let userInput = prompt("Enter the number of days you will be borrowing the book for. (Max 10)")
@@ -48,6 +53,7 @@ availabeBtn.addEventListener("click", async () => {
                     })
                     if(req.ok){
                         alert("Book Borrowed")
+                        // updating the ui after borrowing books
                         data = await getData()
                         cont.innerHTML = ""
                         data.forEach((ele,i) => {
@@ -62,7 +68,7 @@ availabeBtn.addEventListener("click", async () => {
                         })
                     }
                 } catch (error) {
-                    
+                    alert("Error in displaying available books")
                 }
             } else{
                 alert("You can't borrow a book for that many days")
@@ -73,9 +79,14 @@ availabeBtn.addEventListener("click", async () => {
     }
 })
 
+
+// functionality to check the borrowed books
 borrowedBtn.addEventListener("click", async () => {
+    // catching relevant elements
     const cont = document.getElementById("books-cont")
+    // emptying the displaying container on every click to avoid chaotic displaying
     cont.innerHTML = ""
+    // getting data from the endpoint and displaying it filtered off of books that aren't available
     try {
         let data = await getData()
         data.forEach((ele,i) => {
@@ -90,11 +101,13 @@ borrowedBtn.addEventListener("click", async () => {
             }  
         })
 
+        // functionality for returning books
         window.returnBook = async (buttonEl) => {
             let id = buttonEl.parentElement.id
             const confirmReturn = confirm("Are you sure on returning this?")
             if(confirmReturn === true){
                 try {
+                    // PATCHES the data for a certain book at the endpoint, updates availability and borrowed days
                     let req = await fetch(`${endpoint}/${id}`, {
                         method:"PATCH",
                         headers:{
@@ -118,7 +131,7 @@ borrowedBtn.addEventListener("click", async () => {
                         })
                     }
                 } catch (error) {
-                    
+                    alert("Could not return book, please try after some time")
                 }
             }
             

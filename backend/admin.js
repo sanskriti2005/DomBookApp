@@ -19,8 +19,10 @@ displayBooks()
 // the add new books form
 const bookForm = document.getElementById("book-form")
 
+// Functionality to create and add books into the database
 bookForm.addEventListener("submit", async (e) => {
     e.preventDefault()
+    // get the information from the form
     let title = bookForm.title.value
     let author = bookForm.author.value
     let category = bookForm.category.value
@@ -31,7 +33,7 @@ bookForm.addEventListener("submit", async (e) => {
 
     const bookData = {title, author, category, isAvailable, isVerified, borrowedDays, imageUrl}
 
-    console.log(bookData)
+    // then posts the information to the endpoint to add the book into the database
     try {
         let res = await fetch(endpoint ,{
             method:"POST",
@@ -48,6 +50,8 @@ bookForm.addEventListener("submit", async (e) => {
         
     }
 })
+
+// fucntion to do GET requests
 async function getData() {
     try {
         let res = await fetch(endpoint);
@@ -58,6 +62,8 @@ async function getData() {
         alert("Had trouble fetching the data")
     }
 }
+
+// Fucntion to display all the books in the database
 async function displayBooks() {
     const cont = document.getElementById("books-cont")
     try {
@@ -72,6 +78,7 @@ async function displayBooks() {
         </div>`
         })
 
+        // functionality to verify the book
         window.verifyBook = async (buttonEl) => {
             let id = buttonEl.parentElement.id
             try {
@@ -91,6 +98,7 @@ async function displayBooks() {
             }
         }
 
+        // functionality to delete the book
         window.deleteBook = async (buttonEl) => {
             let id = buttonEl.parentElement.id
             const confirmDelete = confirm("Are you sure on deleting this?")
@@ -105,13 +113,13 @@ async function displayBooks() {
                         displayBooks()
                     }
                 } catch (error) {
-                    
+                    alert("Could not delete book, please try again later")
                 }
             }
             
         }
     } catch (error) {
-        
+
     }
 }
 
