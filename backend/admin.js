@@ -87,7 +87,7 @@ async function displayBooks() {
                 <p>${ele.author}</p>
                 <p>Avaialbility Status: Is Not Available</p>
                 <p>Days borrowed for: ${ele.borrowedDays}</p>
-                <p>Book is verfied</p>
+                <p>Book is verified</p>
                 <button type="button" onclick="deleteBook(this)">Delete Book</button>
                 </div>`
                 }
@@ -108,7 +108,7 @@ async function displayBooks() {
                 <h4>${ele.title}</h4>
                 <p>${ele.author}</p>
                 <p>Avaialbility Status: Is Available</p>
-                <p>Book is verfied</p>
+                <p>Book is verified</p>
                 <button type="button" onclick="deleteBook(this)">Delete Book</button>
                 </div>`
                 }
