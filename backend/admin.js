@@ -78,6 +78,7 @@ async function displayBooks() {
                 <img src="${ele.imageUrl}" alt="book cover">
                 <h4>${ele.title}</h4>
                 <p>${ele.author}</p>
+                <p>Category: ${ele.category}</p>
                 <p>Avaialbility Status: Is Not Available</p>
                 <p>Days borrowed for: ${ele.borrowedDays}</p>
                 <button type="button" onclick="verifyBook(this)">Verify Book</button>
@@ -88,6 +89,7 @@ async function displayBooks() {
                 <img src="${ele.imageUrl}" alt="book cover">
                 <h4>${ele.title}</h4>
                 <p>${ele.author}</p>
+                <p>Category: ${ele.category}</p>
                 <p>Avaialbility Status: Is Not Available</p>
                 <p>Days borrowed for: ${ele.borrowedDays}</p>
                 <p>Book is verified</p>
@@ -101,6 +103,7 @@ async function displayBooks() {
                 <img src="${ele.imageUrl}" alt="book cover">
                 <h4>${ele.title}</h4>
                 <p>${ele.author}</p>
+                <p>Category: ${ele.category}</p>
                 <p>Avaialbility Status: Is Available</p>
                 <button type="button" onclick="verifyBook(this)">Verify Book</button>
                 <button type="button" onclick="deleteBook(this)">Delete Book</button>
@@ -110,6 +113,7 @@ async function displayBooks() {
                 <img src="${ele.imageUrl}" alt="book cover">
                 <h4>${ele.title}</h4>
                 <p>${ele.author}</p>
+                <p>Category: ${ele.category}</p>
                 <p>Avaialbility Status: Is Available</p>
                 <p>Book is verified</p>
                 <button type="button" onclick="deleteBook(this)">Delete Book</button>

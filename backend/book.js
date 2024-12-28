@@ -33,6 +33,7 @@ availabeBtn.addEventListener("click", async () => {
             <img src="${ele.imageUrl}" alt="book cover">
             <h4>${ele.title}</h4>
             <p>${ele.author}</p>
+            <p>Category: ${ele.category}</p>
             <button type="button" onclick="borrowBook(this)">Borrow Book</button>
         </div>`     
             }  
@@ -62,6 +63,7 @@ availabeBtn.addEventListener("click", async () => {
                             <img src="${ele.imageUrl}" alt="book cover">
                             <h4>${ele.title}</h4>
                             <p>${ele.author}</p>
+                            <p>Category: ${ele.category}</p>
                             <button type="button" onclick="borrowBook(this)">Borrow Book</button>
                         </div>`     
                             }  
@@ -95,6 +97,7 @@ borrowedBtn.addEventListener("click", async () => {
             <img src="${ele.imageUrl}" alt="book cover">
             <h4>${ele.title}</h4>
             <p>${ele.author}</p>
+            <p>Category: ${ele.category}</p>
             <p>Borrowed Days: ${ele.borrowedDays}</p>
             <button type="button" onclick="returnBook(this)">Return</button>
         </div>`     
@@ -125,6 +128,7 @@ borrowedBtn.addEventListener("click", async () => {
                             <img src="${ele.imageUrl}" alt="book cover">
                             <h4>${ele.title}</h4>
                             <p>${ele.author}</p>
+                            <p>Category: ${ele.category}</p>
                             <button type="button" onclick="borrowBook(this)">Borrow Book</button>
                         </div>`     
                             }  
