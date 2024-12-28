@@ -62,7 +62,6 @@ async function displayBooks() {
     const cont = document.getElementById("books-cont")
     try {
         let data = await getData()
-        console.log(data)
         data.forEach((ele,i) => {
             cont.innerHTML += ` <div class="book" id="${ele.id}">
             <img src="${ele.imageUrl}" alt="book cover">
