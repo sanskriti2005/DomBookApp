@@ -24,3 +24,19 @@ body{
 #navbar > div > a:hover{
     color: rgb(118, 118, 118);
 }
+
+/* login page styling */
+#login-form{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 2rem auto;
+    background-color: rgb(197, 197, 197);
+    padding: 1.8rem;
+    gap: 0.8rem;
+}
+#login-form > p{
+    text-align: center;
+    font-weight: 600;
+    font-size: larger;
+}
