@@ -44,6 +44,9 @@ bookForm.addEventListener("submit", async (e) => {
         })
         if (res.ok) {
             alert("Book added successfully!")
+            bookForm.title.value = "";
+            bookForm.author.value = "";
+            bookForm.category.value = "";
             displayBooks()
         }
     } catch (error) {
